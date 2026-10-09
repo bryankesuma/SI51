@@ -1,0 +1,103 @@
+{
+  "info": {
+    "_postman_id": "dbe3c9a7-18dc-424d-9224-bca8e5a97442",
+    "name": "PAW2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55686314"
+  },
+  "item": [
+    {
+      "name": "Fakultas",
+      "item": [
+        {
+          "name": "List Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Fakultas",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Fkultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prodi",
+      "item": [
+        {
+          "name": "Create Prodi",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/prodi",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "prodi"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
