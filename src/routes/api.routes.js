@@ -26,5 +26,7 @@ router.delete('/fakultas/:id', FakultasController.delete)
 
 router.post('/prodi', ProdiController.store)
 router.get('/prodi', ProdiController.index)
+router.put('/prodi/:id', ProdiController.update)
+router.delete('/prodi/:id', ProdiController.delete)
 
 export default router
