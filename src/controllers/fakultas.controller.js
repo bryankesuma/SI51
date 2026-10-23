@@ -5,34 +5,66 @@ import { apiResponse, apiResponseValidation } from '../utils/response.js'
 
 class FakultasController {
   static async index(req, res) {
-    const { search, sort, sortBy = "createdAt" } = req.query
+    const { 
+      search, 
+      sort, 
+      sortBy = "createdAt", 
+      page = 1, 
+      limit = 10, 
+    } = req.query;
 
-    const filter = {}
+    const currentPage = Math.max(1, parseInt(page, 10) || 1)
+    const perPage = Math.max(1, parseInt(limit, 10) || 10)
+    const skip = (currentPage - 1) * perPage
+
+    const allowedSortFields = ["name", "createdAt", "updatedAt"]
+    const sortField = allowedSortFields.includes(sortBy) ? sortBy : "createdAt"
+
+    const filter = {};
+
+    const sortOption = {
+      [sortField]: sort === 'desc' ? -1 : 1,
+      _id: 1,
+    };
 
     if (search){
       filter.name = {
         $regex: search,
         $options: "i",
-      }
+      };
     }
 
-    const sortOption = {
-      [sortBy]: sort === 'desc' ? -1 : 1,
-    }
+    const [listFakultas, totalData ] = await Promise.all([
+      FakultasModel.find(filter).select({
+        _id: 1,
+        name: 1,
+        createdAt: 1,
+        pdatedAt: 1,
+      })
+      .sort(sortOption)
+      .skip(skip)
+      .limit(perPage),
 
-    const listFakultas = await FakultasModel.find(filter).select({
-      _id: 1,
-      name: 1,
-      createdAt: 1,
-      updatedAt: 1,
-    }).sort(sortOption);
+      FakultasModel.countDocuments(filter),
+    ]);
+
+    const totalPages = Math.ceil(totalData / perPage);
 
     return apiResponse({
-      res,
-      status: 200,
-      message: 'List fakultas', 
-      data: listFakultas,
-    })
+      res, 
+      status: 200,  
+      data: {
+        items : listFakultas,
+        pagination: {
+          totalData,
+          totalPages,
+          currentPage,
+          perPage,
+          hasNextPage: currentPage < totalPages,
+          hasPrevPage: currentPage > 1
+        }, 
+      },
+    });
   }
 
   static async show(req, res) {

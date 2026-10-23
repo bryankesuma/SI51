@@ -6,14 +6,69 @@ import ProdiModel from "../model/prodi.model.js"
 
 class ProdiController{
     static async index(req, res){
-        const listProdi = await ProdiModel.find().populate("fakultas");
+        const { 
+            search, 
+            sort, 
+            sortBy = "createdAt", 
+            page = 1, 
+            limit = 10, 
+        } = req.query;
 
-        return apiResponse({
-            res, 
-            status: 200,
-            message: "List prodi",
-            data: listProdi,
-        });
+        const currentPage = Math.max(1, parseInt(page, 10) || 1)
+        const perPage = Math.max(1, parseInt(limit, 10) || 10)
+        const skip = (currentPage - 1) * perPage
+
+        const allowedSortFields = ["kode", "nama_Prodi", "createdAt", "updatedAt"]
+        const sortField = allowedSortFields.includes(sortBy) ? sortBy : "createdAt"
+
+        const filter = {};
+
+        const sortOption = {
+            [sortField]: sort === 'desc' ? -1 : 1,
+            _id: 1,
+        };
+
+        if (search){
+            filter.name = {
+            $regex: search,
+            $options: "i",
+            };
+        }
+
+        const [listProdi, totalData ] = await Promise.all([
+            ProdiModel.find(filter).select({
+                _id: 1,
+                kode: 1,
+                nama_prodi: 1,
+                fakultas: 1,
+                createdAt: 1,
+                updatedAt: 1,
+            })
+            .sort(sortOption)
+            .skip(skip)
+            .limit(perPage),
+            populate({ path: "fakultas", select: "name" }),
+
+        ProdiModel.countDocuments(filter),
+    ]);
+
+    const totalPages = Math.ceil(totalData / perPage);
+
+    return apiResponse({
+      res, 
+      status: 200,  
+      data: {
+        items : listProdi,
+        pagination: {
+          totalData,
+          totalPages,
+          currentPage,
+          perPage,
+          hasNextPage: currentPage < totalPages,
+          hasPrevPage: currentPage > 1
+        }, 
+      },
+    });
     }
     
     static async show(req, res){}
