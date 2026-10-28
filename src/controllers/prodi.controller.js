@@ -14,22 +14,21 @@ class ProdiController{
             limit = 10, 
         } = req.query;
 
-        const currentPage = Math.max(1, parseInt(page, 10) || 1)
-        const perPage = Math.max(1, parseInt(limit, 10) || 10)
-        const skip = (currentPage - 1) * perPage
+        const currentPage = Math.max(1, parseInt(page, 10) || 1);
+        const perPage = Math.max(1, parseInt(limit, 10) || 10);
+        const skip = (currentPage - 1) * perPage;
 
         const allowedSortFields = ["kode", "nama_Prodi", "createdAt", "updatedAt"]
         const sortField = allowedSortFields.includes(sortBy) ? sortBy : "createdAt"
 
         const filter = {};
-
         const sortOption = {
             [sortField]: sort === 'desc' ? -1 : 1,
             _id: 1,
         };
 
         if (search){
-            filter.name = {
+            filter.nama_prodi = {
             $regex: search,
             $options: "i",
             };
@@ -46,8 +45,8 @@ class ProdiController{
             })
             .sort(sortOption)
             .skip(skip)
-            .limit(perPage),
-            populate({ path: "fakultas", select: "name" }),
+            .limit(perPage)
+            .populate({ path: "fakultas", select: "name" }),
 
         ProdiModel.countDocuments(filter),
     ]);

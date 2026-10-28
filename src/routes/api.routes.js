@@ -8,6 +8,8 @@ import UserController from '../controllers/user.controller.js'
 import WelcomeController from '../controllers/welcome.controller.js'
 import FakultasController from '../controllers/fakultas.controller.js'
 import ProdiController from '../controllers/prodi.controller.js'
+import AuthController from '../controllers/auth.controller.js'
+import { authenticateJwt } from '../middleware/auth.js'
 
 const router = express.Router()
 
@@ -16,6 +18,11 @@ router.post('/users', UserController.store)
 router.post('/upload', upload.single('file'), UploadController.store)
 
 router.use(logMiddleware)
+
+router.post('/sign-up', AuthController.register)
+router.post('/sign-in', AuthController.login)
+
+router.use(authenticateJwt)
 
 router.get('/fakultas', FakultasController.index)
 router.get('/fakultas/:id', FakultasController.show)

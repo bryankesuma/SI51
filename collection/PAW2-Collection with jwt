@@ -1,0 +1,1383 @@
+{
+  "info": {
+    "_postman_id": "dbe3c9a7-18dc-424d-9224-bca8e5a97442",
+    "name": "PAW2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55686314"
+  },
+  "item": [
+    {
+      "name": "Fakultas",
+      "item": [
+        {
+          "name": "List Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/fakultas?search=fakultas&sort=asc&sortBy=name&page=1&limit=3",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "fakultas"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "fakultas"
+                },
+                {
+                  "key": "sort",
+                  "value": "asc"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "name"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=fakultas&sort=desc&sortBy=name",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "fakultas"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "122"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"7a-G3k16hu2tCr1AFteuNnmoTrI4zM\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 12:55:17 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ac640d2f0e36b63b9301ea4\",\n      \"name\": \"FIKR-UPDATE\",\n      \"__v\": 0\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=teknik&sortBy=name&sort=desc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "teknik"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "desc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "118"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"76-Sv5Psn3bcHr88/7++OyiZwSW+YQ\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:06:40 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=teknik&sortBy=name&sort=asc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "teknik"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "118"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"76-Sv5Psn3bcHr88/7++OyiZwSW+YQ\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:06:57 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=fakultas&sortBy=name&sort=asc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "fakultas"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "118"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"76-Sv5Psn3bcHr88/7++OyiZwSW+YQ\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:07:12 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=fakultas&sortBy=name&sort=asc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "fakultas"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "369"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"171-VFtHV92UBcTm73sE25d4dTvLbtQ\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:07:26 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5c\",\n      \"name\": \"Fakultas Ekonomi\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5e\",\n      \"name\": \"Fakultas Hukum\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5b\",\n      \"name\": \"Fakultas Ilmu Komputer\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5f\",\n      \"name\": \"Fakultas Kedokteran\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?sort=asc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "369"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"171-Q/LqOs3+2gSTas7P/ufxWGTXm0M\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:07:40 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5f\",\n      \"name\": \"Fakultas Kedokteran\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5b\",\n      \"name\": \"Fakultas Ilmu Komputer\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5e\",\n      \"name\": \"Fakultas Hukum\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5c\",\n      \"name\": \"Fakultas Ekonomi\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?sort=asc",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "*"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "content-length",
+                  "value": "369"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"171-kJcmcNwp2n/dj0RD7v7msGPIwy4\""
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "date",
+                  "value": "Wed, 21 Oct 2026 14:08:21 GMT"
+                },
+                {
+                  "key": "connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "keep-alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200,\n    \"message\": \"List fakultas\"\n  },\n  \"data\": [\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5b\",\n      \"name\": \"Fakultas Ilmu Komputer\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5c\",\n      \"name\": \"Fakultas Ekonomi\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5d\",\n      \"name\": \"Fakultas Teknik\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5e\",\n      \"name\": \"Fakultas Hukum\"\n    },\n    {\n      \"_id\": \"6ad8c54b378d639f77982e5f\",\n      \"name\": \"Fakultas Kedokteran\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "List Fakultas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer TOKEN"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nama\": \"FIKR\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/fakultas?search=fakultas&sort=asc&sortBy=name&page=1&limit=3",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "fakultas"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "fakultas"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "63"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3f-oeOz7QQ+u+X3LbRyhnSiVJOlmLA\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Oct 2026 14:03:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 401,\n    \"message\": \"Unauthorized: jwt malformed\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Fakultas",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nama\" : \"FS&T\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/fakultas",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "fakultas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Fakultas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prodi",
+      "item": [
+        {
+          "name": "Create Prodi",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"kode\": \"SI\",\r\n    \"nama_prodi\": \"Sistem Informasi\",\r\n    \"fakultas_id\": \"6ac640d2f0e36b63b9301ea4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/prodi",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "prodi"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Prodi",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"Prodi\" : \"Informatika\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/prodi",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "prodi"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Prodi",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"Prodi\" : \"Sistem Informasi\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/prodi?search=ilmu&sort=asc&sortBy=name&limit=10&page=1",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "prodi"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "ilmu"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "name"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "379"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"17b-ZslW00yz6hQA3CVd9/ZM2SjTqjU\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 28 Oct 2026 12:29:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"meta\": {\n    \"status\": 200\n  },\n  \"data\": {\n    \"items\": [\n      {\n        \"_id\": \"6ae1e6bac5e37560f343f03f\",\n        \"kode\": \"HK001\",\n        \"nama_prodi\": \"Ilmu Hukum\",\n        \"fakultas\": {\n          \"_id\": \"6ae1e6b9c5e37560f343f02e\",\n          \"name\": \"Fakultas Hukum\"\n        },\n        \"createdAt\": \"2026-10-28T12:12:42.001Z\",\n        \"updatedAt\": \"2026-10-28T12:12:42.001Z\"\n      }\n    ],\n    \"pagination\": {\n      \"totalData\": 1,\n      \"totalPages\": 1,\n      \"currentPage\": 1,\n      \"perPage\": 10,\n      \"hasNextPage\": false,\n      \"hasPrevPage\": false\n    }\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Prodi",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"kode\" : \"SI-UPDATE\",\r\n    \"nama_prodi\" : \"Sistem Informasi Update\",\r\n    \"fakultas_id\" : \"6ac640d2f0e36b63b9301ea4\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/prodi/6ad1ff8531f52494d8d56bc9",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "prodi",
+                "6ad1ff8531f52494d8d56bc9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Prodi",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/prodi",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "prodi"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Kuis 1",
+      "item": [
+        {
+          "name": "Paket",
+          "item": [
+            {
+              "name": "Create Paket",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nomor_resi\" : \"R0001\",\r\n    \"nama_paket\" : \"Keripik Pisang Yen-Yen Khas Lampung\",\r\n    \"keterangan_paket\" : \"2 original, 2 rasa coklat, 1 rasa kopi, 1 rasa durian\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"nama_penerima\" : \"Jonathan\",\r\n    \"berat_kg\" : 12\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/paket_create_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "paket_create_paket"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Validasi Create Paket",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"nomor_resi\" : \" \",\r\n    \"nama_paket\" : \" \",\r\n    \"keterangan_paket\" : \" \",\r\n    \"nama_pengirim\" : \" \",\r\n    \"nama_penerima\" : \" \",\r\n    \"berat_kg\" : \" \"\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/paket_create_paket",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "paket_create_paket"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": null,
+                  "cookie": [],
+                  "body": ""
+                },
+                {
+                  "name": "Create Paket",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n    \"nomor_resi\" : \"R0001\",\r\n    \"nama_paket\" : \"Keripik Pisang Yen-Yen Khas Lampung\",\r\n    \"keterangan_paket\" : \"2 original, 2 rasa coklat, 1 rasa kopi, 1 rasa durian\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"nama_penerima\" : \"Jonathan\",\r\n    \"berat_kg\" : 12\r\n}\r\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/paket_create_paket",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "paket_create_paket"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": null,
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "List Paket",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/apipaket_list_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "apipaket_list_paket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Paket",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nomor_resi\" : \"R0002\",\r\n    \"nama_paket\" : \"Gantungan Kunci Khas Belitung\",\r\n    \"keterangan_paket\" : \"Terbuat dari kerang, dengan tulisan Belitung\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"nama_penerima\" : \"Vanessa\",\r\n    \"berat_kg\" : 0.5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/paket_update_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "paket_update_paket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Paket",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/paket_delete_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "paket_delete_paket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Detail Paket",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/paket_detail_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "paket_detail_paket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Validasi Create Paket",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nomor_resi\" : \" \",\r\n    \"nama_paket\" : \" \",\r\n    \"keterangan_paket\" : \" \",\r\n    \"nama_pengirim\" : \" \",\r\n    \"nama_penerima\" : \" \",\r\n    \"berat_kg\" : \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/paket_create_paket",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "paket_create_paket"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Validasi Detail Paket",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Test Middleware",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Penerima",
+          "item": [
+            {
+              "name": "Create Penerima",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"kode_penerima\" : \"P00001\",\r\n    \"nama_penerima\" : \"Jonathan\",\r\n    \"nomor_resi\" : \"R0001\",\r\n    \"nama_paket\" : \"Keripik Pisang Yen-Yen Khas Lampung\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"berat_kg\" : 12\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_create_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_create_penerima"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List Penerima",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_list_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_list_penerima"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "List Penerima",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_list_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_list_penerima"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Detail Penerima",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{   \r\n    \"nomor_penerima\" : \"P0001\",\r\n    \"nama_penerima\" : \"Jonathan\",\r\n    \"nomor_resi\": \"R0001\",\r\n    \"nama_paket\" : \"Keripik Pisang Yen-Yen Khas Lampung\",\r\n    \"keterangan_paket\" : \"2 original, 2 rasa coklat, 1 rasa kopi, 1 rasa durian\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"berat_kg\" : 12,\r\n    \"paket_id\" : \"6a0000100002\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_detail_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_detail_penerima"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Penerima",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nomor_penerima\" : \"P0002\",\r\n    \"nama_penerima\" : \"Vanessa\",\r\n    \"nama_paket\" : \"Gantungan Kunci Khas Belitung\",\r\n    \"keterangan_paket\" : \"Terbuat dari kerang, dengan tulisan Belitung\",\r\n    \"nama_pengirim\" : \"Yanto\",\r\n    \"berat_kg\" : 0.5,\r\n    \"paket_id\" : \"6a00002b0003\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_update_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_update_penerima"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Penerima",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/penerima_delete_penerima",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "penerima_delete_penerima"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
