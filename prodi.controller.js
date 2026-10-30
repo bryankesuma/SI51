@@ -1,137 +1,141 @@
-import mongoose from "mongoose"
-import FakultasModel from "../model/fakultas.model.js"
-import { storeProdiSchema, updateProdiSchema } from "../schemas/prodi.schema.js"
-import { apiResponse, apiResponseValidation } from "../utils/response.js"
-import ProdiModel from "../model/prodi.model.js"
+import mongoose from 'mongoose'
 
-class ProdiController{
-    static async index(req, res){
-        const listProdi = await ProdiModel.find().populate("fakultas");
+import FakultasModel from '../model/fakultas.model.js'
+import ProdiModel from '../model/prodi.model.js'
+import { storeProdiSchema, updateProdiSchema } from '../schemas/prodi.schema.js'
+import { apiResponse, apiResponseValidation } from '../utils/response.js'
 
-        return apiResponse({
-            res, 
-            status: 200,
-            message: "List prodi",
-            data: listProdi,
-        });
-    }
-    
-    static async show(req, res){}
+class ProdiController {
+  static async index(req, res) {
+    const listProdi = await ProdiModel.find().populate('fakultas')
 
-    static async store(req, res){
-        const result = storeProdiSchema.safeParse(req.body)
+    return apiResponse({
+      res,
+      status: 200,
+      message: 'List prodi',
+      data: listProdi,
+    })
+  }
 
-        if(!result.success) {
-            return apiResponseValidation({
-                res,
-                errors : result.error
-            })
-        }
+  static async show(req, res) {}
 
-        const {kode, nama_prodi, fakultas_id} = result.data
+  static async store(req, res) {
+    const result = storeProdiSchema.safeParse(req.body)
 
-        const isExists = await FakultasModel.exists({
-            _id : new mongoose.Types.ObjectId(fakultas_id)
-        })
-
-        if (!isExists) {
-            return apiResponse({
-                res, 
-                status: 404,
-                message: "Fakultas tidak ada"
-            })
-        }
-
-        const newProdi = await ProdiModel.create({
-            kode: kode, 
-            nama_prodi: nama_prodi,
-            fakultas: fakultas_id,
-        })
-
-        return apiResponse({
-            res,
-            status: 201,
-            message: "Prodi berhasil di buat",
-            data: newProdi
-        })
+    if (!result.success) {
+      return apiResponseValidation({
+        res,
+        errors: result.error,
+      })
     }
 
-    static async update(req, res){
-        const prodiId = req.params.id;
-        const result = updateProdiSchema.safeParse(req.body)
+    const { kode, nama_prodi, fakultas_id } = result.data
 
-        if (!result.success) {
-            return apiResponseValidation({
-                res, 
-                errors: result.error
-            })
-        }
+    const isExists = await FakultasModel.exists({
+      _id: new mongoose.Types.ObjectId(fakultas_id),
+    })
 
-        //beda null sama nol
-        const prodi = await ProdiModel.findById(prodiId)
-        if (!prodi) {
-            return apiResponse({
-                res,
-                status: 404,
-                message: "Prodi tidak ada",
-                data: null
-            })
-        }
-
-        const { fakultas_id, kode, nama_prodi } = result.data
-
-        if (fakultas_id) {
-            const isExists = await FakultasModel.exists({
-                _id: new mongoose.Types.ObjectId(fakultas_id)
-            })
-
-            if(!isExists) {
-                return apiResponse({
-                    res,
-                    status: 404,
-                    message: "Fakultas tidak ada",
-                    data: null
-                })
-            }
-        }
-
-        const updateProdi = await ProdiModel.findByIdAndUpdate(prodiId, {
-            kode: kode,
-            nama_prodi: nama_prodi,
-            fakultas: fakultas_id
-        },{
-            new: true
-        }).populate("fakultas")
-
-        return apiResponse({
-            res,
-            status: 200,
-            message: "Data berhasil update",
-            data : updateProdi
-        })
+    if (!isExists) {
+      return apiResponse({
+        res,
+        status: 404,
+        message: 'Fakultas tidak ada',
+      })
     }
 
-    static async delete(req, res){
-        const ProdiId = req.params.id
-        const prodi = await ProdiModel.findByIdAndDelete(ProdiId)
+    const newProdi = await ProdiModel.create({
+      kode: kode,
+      nama_prodi: nama_prodi,
+      fakultas: fakultas_id,
+    })
 
-        if(!prodi){
-            return apiResponse({
-                res,
-                status: 404,
-                message: "Prodi tidak ada",
-                data: null,
-            })
-        }
+    return apiResponse({
+      res,
+      status: 201,
+      message: 'Prodi berhasil di buat',
+      data: newProdi,
+    })
+  }
 
-        return apiResponse({
-            res,
-            status: 200,
-            message: "Prodi berhasil di hapus",
-            data: null,
-        })
+  static async update(req, res) {
+    const prodiId = req.params.id
+    const result = updateProdiSchema.safeParse(req.body)
+
+    if (!result.success) {
+      return apiResponseValidation({
+        res,
+        errors: result.error,
+      })
     }
+
+    //beda null sama nol
+    const prodi = await ProdiModel.findById(prodiId)
+    if (!prodi) {
+      return apiResponse({
+        res,
+        status: 404,
+        message: 'Prodi tidak ada',
+        data: null,
+      })
+    }
+
+    const { fakultas_id, kode, nama_prodi } = result.data
+
+    if (fakultas_id) {
+      const isExists = await FakultasModel.exists({
+        _id: new mongoose.Types.ObjectId(fakultas_id),
+      })
+
+      if (!isExists) {
+        return apiResponse({
+          res,
+          status: 404,
+          message: 'Fakultas tidak ada',
+          data: null,
+        })
+      }
+    }
+
+    const updateProdi = await ProdiModel.findByIdAndUpdate(
+      prodiId,
+      {
+        kode: kode,
+        nama_prodi: nama_prodi,
+        fakultas: fakultas_id,
+      },
+      {
+        new: true,
+      },
+    ).populate('fakultas')
+
+    return apiResponse({
+      res,
+      status: 200,
+      message: 'Data berhasil update',
+      data: updateProdi,
+    })
+  }
+
+  static async delete(req, res) {
+    const ProdiId = req.params.id
+    const prodi = await ProdiModel.findByIdAndDelete(ProdiId)
+
+    if (!prodi) {
+      return apiResponse({
+        res,
+        status: 404,
+        message: 'Prodi tidak ada',
+        data: null,
+      })
+    }
+
+    return apiResponse({
+      res,
+      status: 200,
+      message: 'Prodi berhasil di hapus',
+      data: null,
+    })
+  }
 }
 
 export default ProdiController
-

@@ -87,12 +87,8 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/prodi",
-              "host": [
-                "{{BASE_URL}}"
-              ],
-              "path": [
-                "prodi"
-              ]
+              "host": ["{{BASE_URL}}"],
+              "path": ["prodi"]
             }
           },
           "response": []

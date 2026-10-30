@@ -1,17 +1,17 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const fakultasSchema = new mongoose.Schema(
-    {
-        name: {
-            type: String,
-            required: true,
-            unique: true,
-        },
+  {
+    name: {
+      type: String,
+      required: true,
+      unique: true,
     },
-    {
-        timpestamps: true,
-    },
+  },
+  {
+    timpestamps: true,
+  },
 )
 
-const FakultasModel = mongoose.model("fakultas",fakultasSchema)
+const FakultasModel = mongoose.model('fakultas', fakultasSchema)
 export default FakultasModel

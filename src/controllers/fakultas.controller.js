@@ -5,66 +5,61 @@ import { apiResponse, apiResponseValidation } from '../utils/response.js'
 
 class FakultasController {
   static async index(req, res) {
-    const { 
-      search, 
-      sort, 
-      sortBy = "createdAt", 
-      page = 1, 
-      limit = 10, 
-    } = req.query;
+    const { search, sort, sortBy = 'createdAt', page = 1, limit = 10 } = req.query
 
     const currentPage = Math.max(1, parseInt(page, 10) || 1)
     const perPage = Math.max(1, parseInt(limit, 10) || 10)
     const skip = (currentPage - 1) * perPage
 
-    const allowedSortFields = ["name", "createdAt", "updatedAt"]
-    const sortField = allowedSortFields.includes(sortBy) ? sortBy : "createdAt"
+    const allowedSortFields = ['name', 'createdAt', 'updatedAt']
+    const sortField = allowedSortFields.includes(sortBy) ? sortBy : 'createdAt'
 
-    const filter = {};
+    const filter = {}
 
     const sortOption = {
       [sortField]: sort === 'desc' ? -1 : 1,
       _id: 1,
-    };
-
-    if (search){
-      filter.name = {
-        $regex: search,
-        $options: "i",
-      };
     }
 
-    const [listFakultas, totalData ] = await Promise.all([
-      FakultasModel.find(filter).select({
-        _id: 1,
-        name: 1,
-        createdAt: 1,
-        pdatedAt: 1,
-      })
-      .sort(sortOption)
-      .skip(skip)
-      .limit(perPage),
+    if (search) {
+      filter.name = {
+        $regex: search,
+        $options: 'i',
+      }
+    }
+
+    const [listFakultas, totalData] = await Promise.all([
+      FakultasModel.find(filter)
+        .select({
+          _id: 1,
+          name: 1,
+          createdAt: 1,
+          pdatedAt: 1,
+        })
+        .sort(sortOption)
+        .skip(skip)
+        .limit(perPage),
 
       FakultasModel.countDocuments(filter),
-    ]);
+    ])
 
-    const totalPages = Math.ceil(totalData / perPage);
+    const totalPages = Math.ceil(totalData / perPage)
 
     return apiResponse({
-      res, 
-      status: 200,  
+      res,
+      status: 200,
       data: {
-        items : listFakultas,
+        items: listFakultas,
         pagination: {
           totalData,
           totalPages,
           currentPage,
           perPage,
           hasNextPage: currentPage < totalPages,
-          hasPrevPage: currentPage > 1
-        }, 
+          hasPrevPage: currentPage > 1,
+        },
       },
-    });
+    })
   }
 
   static async show(req, res) {
@@ -76,7 +71,7 @@ class FakultasController {
       return apiResponse({
         res,
         status: 404,
-        message: 'Fakultas tidak ada', 
+        message: 'Fakultas tidak ada',
         data: fakultas,
       })
     }
@@ -84,22 +79,22 @@ class FakultasController {
     return apiResponse({
       res,
       status: 200,
-      message: 'Detail fakultas', 
+      message: 'Detail fakultas',
       data: fakultas,
     })
   }
 
   static async store(req, res) {
-    const result = storeFakultasSchema.safeParse(req.body) 
+    const result = storeFakultasSchema.safeParse(req.body)
 
-    if (!result.success) { 
-      return apiResponseValidation({ 
-        res, 
-        errors: result.error, 
-      }) 
-    } 
+    if (!result.success) {
+      return apiResponseValidation({
+        res,
+        errors: result.error,
+      })
+    }
 
-    const { name } = result.data 
+    const { name } = result.data
 
     const newFakultas = await FakultasModel.create({
       name,
@@ -108,23 +103,23 @@ class FakultasController {
     return apiResponse({
       res,
       status: 201,
-      message: 'Fakultas berhasil di buat', 
+      message: 'Fakultas berhasil di buat',
       data: newFakultas,
     })
   }
 
   static async update(req, res) {
     const fakultasId = req.params.id
-    const result = updateFakultasSchema.safeParse(req.body) 
+    const result = updateFakultasSchema.safeParse(req.body)
 
-    if (!result.success) { 
-      return apiResponseValidation({ 
-        res, 
-        errors: result.error, 
-      }) 
-    } 
+    if (!result.success) {
+      return apiResponseValidation({
+        res,
+        errors: result.error,
+      })
+    }
 
-    const { name } = result.data 
+    const { name } = result.data
 
     const exists = await FakultasModel.exists({
       _id: fakultasId,
@@ -134,7 +129,7 @@ class FakultasController {
       return apiResponse({
         res,
         status: 404,
-        message: 'Fakultas tidak ada', 
+        message: 'Fakultas tidak ada',
         data: null,
       })
     }
@@ -151,7 +146,7 @@ class FakultasController {
     return apiResponse({
       res,
       status: 200,
-      message: 'Fakultas berhasil di update', 
+      message: 'Fakultas berhasil di update',
       data: updateFakultas,
     })
   }
@@ -167,7 +162,7 @@ class FakultasController {
       return apiResponse({
         res,
         status: 404,
-        message: 'Fakultas tidak ada', 
+        message: 'Fakultas tidak ada',
         data: null,
       })
     }
@@ -179,7 +174,7 @@ class FakultasController {
     return apiResponse({
       res,
       status: 200,
-      message: 'Fakultas berhasil di hapus', 
+      message: 'Fakultas berhasil di hapus',
       data: null,
     })
   }

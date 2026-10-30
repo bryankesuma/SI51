@@ -1,15 +1,14 @@
 import express from 'express'
 
-import {logMiddleware} from '../middleware/log.middleware.js'
-
 import upload from '../config/upload.js'
+import AuthController from '../controllers/auth.controller.js'
+import FakultasController from '../controllers/fakultas.controller.js'
+import ProdiController from '../controllers/prodi.controller.js'
 import UploadController from '../controllers/upload.controller.js'
 import UserController from '../controllers/user.controller.js'
 import WelcomeController from '../controllers/welcome.controller.js'
-import FakultasController from '../controllers/fakultas.controller.js'
-import ProdiController from '../controllers/prodi.controller.js'
-import AuthController from '../controllers/auth.controller.js'
 import { authenticateJwt } from '../middleware/auth.js'
+import { logMiddleware } from '../middleware/log.middleware.js'
 
 const router = express.Router()
 
@@ -19,8 +18,8 @@ router.post('/upload', upload.single('file'), UploadController.store)
 
 router.use(logMiddleware)
 
-router.post('/sign-up', AuthController.register)
-router.post('/sign-in', AuthController.login)
+router.post('/register', AuthController.register)
+router.post('/login', AuthController.login)
 
 router.use(authenticateJwt)
 
